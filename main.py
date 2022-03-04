@@ -1,5 +1,6 @@
 from GameFunctions import *
 from deck import game_deck
+import time
 
 # main function
 def main():
@@ -20,7 +21,10 @@ def main():
     #while loop for the game
     while player_stays or dealer_stays:
         print(f"Dealer has\n {print_hand(reveal_dealer_hand(dealer_hand))}\nand hidden card(s)\n")
+        time.sleep(2)   #time to read
         print(f"Your hand is:\n {print_hand(player_hand)}")
+
+        #asking the player to stay or Hit to continue the game
         if player_stays:
             stay_or_hit = input("press 1 to Stay,everything else to Hit \n")
         if total(dealer_hand) > 16:
@@ -36,6 +40,7 @@ def main():
         elif total(dealer_hand) >= 21:
             break
 
+    # asking who won
     if total(player_hand) == 21:
         print(f"\n You have \n {print_hand(player_hand)}of an total of {total(player_hand)} \n \nand the dealer has \n {print_hand(dealer_hand)}for a total of {total(dealer_hand)}")
         print("BLACKJaCK! You win!!!!! :D")
@@ -51,6 +56,7 @@ def main():
     else:
         print("You are nearer on 21, You win :)") if 21 - total(player_hand) < 21 - total(dealer_hand) else print("Dealer is nearer on 21, He wins :(")
 
+    #loop game through recursion
     if input("1: replay\n") == "1":
         main()
     else:
