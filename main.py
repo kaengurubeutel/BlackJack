@@ -1,8 +1,10 @@
 from GameFunctions import *
 from deck import game_deck
 
-
+# main function
 def main():
+
+    #variables for the Game
     stay_or_hit = 0
     all_cards = game_deck()
     player_hand = []
@@ -10,10 +12,12 @@ def main():
     player_stays = True
     dealer_stays = True
 
+    #give both players cards
     for _ in range(2):
         deal_card(player_hand, all_cards)
         deal_card(dealer_hand, all_cards)
 
+    #while loop for the game
     while player_stays or dealer_stays:
         print(f"Dealer has\n {print_hand(reveal_dealer_hand(dealer_hand))}\nand hidden card(s)\n")
         print(f"Your hand is:\n {print_hand(player_hand)}")
@@ -47,8 +51,11 @@ def main():
     else:
         print("You are nearer on 21, You win :)") if 21 - total(player_hand) < 21 - total(dealer_hand) else print("Dealer is nearer on 21, He wins :(")
 
-    if input("1: replay\n") == "1" :
+    if input("1: replay\n") == "1":
         main()
+    else:
+        return 0
+
 
 #run the main function
 if __name__ == '__main__':

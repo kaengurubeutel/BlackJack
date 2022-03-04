@@ -17,7 +17,7 @@ def total(player: list) -> int:
     return total
 
 
-# "AI" for Dealer
+# show 1/2 cards as the amount of cards increases
 def reveal_dealer_hand(dealerHand: list):
     out = []
     if len(dealerHand) == 2:
