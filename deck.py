@@ -1,13 +1,21 @@
 class Card:
     # constructor for cards
-    def __init__(self, name, colour, value: int):
-        self.colour = colour
-        self.name = name
-        self.value = value
+        """
+        Returns a list of 52 Card objects
+        
+        :param name: The name of the card
+        :param colour: The colour of the card
+        :param value: Value of the Card
+        :type value: int
+        """
+        def __init__(self, name, colour, value: int):
+            self.colour = colour
+            self.name = name
+            self.value = value
 
     # returns the card as string
-    def to_string(self):
-        return self.colour + " " + self.name
+        def to_string(self):
+            return self.colour + " " + self.name
 
 
 # returns the full gamedeck with cards as Objects
