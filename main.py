@@ -4,16 +4,17 @@ import time
 
 # main function
 def main():
+  
     """
     The game is played by the player and the dealer. The player is dealt two cards and the dealer is
     dealt two cards, one of which is hidden. The player can choose to stay or hit. If the player hits,
-    he is dealt another card. If the player stays, it becomes the dealer's turn. The dealer must hit if
-    the total is 16 or less and must stay if the total is 17 or more. If the dealer hits and goes over
-    21, the player wins. If the dealer stays and goes over 21, the player loses. If the dealer hits and
-    the total is between 16 and 21, the higher total wins. If the dealer stays and the totals are the
-    same, the player wins. If the dealer hits and the total is less than the player's total, the player
-    wins. If the dealer stays and the total is less than the player's total, the dealer wins. If the
-    dealer hits and the total is greater than the player's total, the player looses.
+    he is dealt another card. If the player stays, it becomes the dealers turn. The dealer must hit if
+    the total is 16 or less, and must stay if the total is 17 or more. If the dealer hits and goes over
+    21, the player wins. If the dealer stays and goes over 21, the player loses. If the dealer goes over
+    21, the player wins. If the dealer hits and the total is greater than the total of the player, the
+    dealer wins. If the dealer and player tie, it is called a push and neither the player nor dealer
+    wins. If the dealer's total is less than the player's total, the player wins
+    :return: The main function is being returned.
     """
 
     #variables for the Game
